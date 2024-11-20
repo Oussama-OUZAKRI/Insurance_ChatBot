@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#Home, #Chat-Home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: transform 1s ease;
+}
+
+#Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-image: url('../img/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+}
+
+#Home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(15px);
+    z-index: -1;
+}
+
+#Home h1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 60px;
+    letter-spacing: 5px;
+    color: rgb(240, 240, 240);
+}
+
+#Home span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    color: rgb(100, 100, 100);
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 50%;
+}
+
+#Home span:hover {
+    color: rgb(240, 240, 240);
+    background-color: rgb(150, 150, 150);
+    border: 1px solid rgb(240, 240, 240);
+    box-shadow: 0 5px 10px 2px rgba(240, 240, 240, .5);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#Chat-Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transform: translateX(100%);
+}
+
+#Chat-Home.open {
+    transform: translateX(0);
+}
+
+#Chevron-Right {
+    font-size: 40px;
+    color: rgb(150, 150, 150);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px 10px;
+    position: absolute;
+    left: 5px;
+    z-index: 100;
+}
+
+#Chevron-Right:hover {
+    background-color: rgb(240, 240, 240);
+    color: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+#Chat-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#Input-Container {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    border-top: 1px solid rgb(240, 240, 240);
+    box-shadow: 0 -2px 4px 0 rgb(240, 240, 240);
+    background-color: #fff;
+}
+
+#Input-Container p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgb(150, 150, 150);
+}
+
+#Chat-Box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 50px;
+    width: 60%;
+    margin: 20px auto;
+}
+
+#Chat-Box input {
+    background-color: transparent;
+    width: 90%;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    border: none;
+}
+
+#Chat-Box input:focus {
+    outline: none;
+}
+
+#Chat-Box span {
+    color: rgb(100, 100, 100);
+}
+
+#Chat-Box span:hover {
+    color: red;
+    cursor: pointer;
+}
+#Message-Container {
+    width: 100vw;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    margin-bottom: 50px;
+    padding: 10px 0;
+    background-color: transparent;
+    position: relative;
+}
+.message_user, .message_bot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    margin: 15px auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.message_user {
+    background-color: rgb(240, 240, 240);
+}
+
+.message_bot {
+    position: relative;
+    border: 1px solid rgb(240, 240, 240);
+}
+
+.message_user span, .message_bot span {
+    margin: 15px 10px;
+    text-align: justify;
+}
+.loader, .loader:before, .loader:after {
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    animation-fill-mode: both;
+    animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader {
+    color: rgb(100, 100, 100);
+    font-size: 7px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    text-indent: -9999em;
+    transform: translateZ(0) translateY(-50%);
+    animation-delay: -0.16s;
+    }
+.loader:before, .loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+}
+.loader:before {
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+.loader:after {
+    left: 3.5em;
+}
+
+@keyframes bblFadInOut {
+    0%, 80%, 100% { box-shadow: 0 2.5em 0 -1.3em }
+    40% { box-shadow: 0 2.5em 0 0 }
+}
+    
