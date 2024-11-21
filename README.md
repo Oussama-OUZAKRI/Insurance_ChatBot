@@ -29,7 +29,7 @@ Ce projet implémente un chatbot spécialisé dans les questions législatives l
 
 - OPENAI_API_KEY=your_openai_api_key (fichier Setting)
 
-## insertion des données 
+## Insertion des données 
 
 - python manage.py insert_data (changer le chemin vers output.json dans vectorDB.py)
 
