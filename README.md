@@ -11,7 +11,6 @@ Il utilise **OpenAI** pour la génération d'embeddings et les réponses, ainsi 
 - **Précision** : Génère des réponses basées sur des articles législatifs et des références fiables.  
 - **Support législatif spécialisé** : Répond aux questions relatives aux lois et réglementations en assurance.  
 
----
 
 ## 🛠️ Prérequis  
 
@@ -19,7 +18,6 @@ Il utilise **OpenAI** pour la génération d'embeddings et les réponses, ainsi 
 - **Clé API OpenAI**  
 - **Variables d'environnement** : Nécessaires pour configurer les clés et services.  
 
----
 
 ## ⚙️ Installation  
 
@@ -56,7 +54,6 @@ Lancez le serveur pour commencer à utiliser le chatbot :
 python manage.py runserver
 ```  
 
----
 
 ## 🧰 Outils et Technologies  
 
@@ -64,13 +61,11 @@ python manage.py runserver
 - **ChromaDB** : Pour le stockage et la recherche de similarités.  
 - **Django** : Framework backend pour gérer le serveur et les opérations de base.  
 
----
 
 ## 🎯 Objectif  
 
 Faciliter l'accès aux réglementations législatives dans le domaine de l'assurance en répondant rapidement et avec précision aux questions des utilisateurs.  
 
----
 
 ## 📚 Ressources utiles  
 
