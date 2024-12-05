@@ -1,38 +1,85 @@
-# Chatbot d'Assurance Législative avec OpenAI et ChromaDB
+# Chatbot d'Assurance Législative avec OpenAI et ChromaDB  
 
-Ce projet implémente un chatbot spécialisé dans les questions législatives liées à l'assurance, en particulier les réglementations de l'ACAPS. Le chatbot utilise OpenAI pour la génération d'embeddings et les réponses, ainsi que ChromaDB pour stocker et interroger des sections similaires en fonction des questions de l'utilisateur.
+Ce projet implémente un **chatbot spécialisé** dans les questions législatives liées à l'assurance, en particulier les réglementations de l'**ACAPS**.  
+Il utilise **OpenAI** pour la génération d'embeddings et les réponses, ainsi que **ChromaDB** pour le stockage et l'interrogation des sections pertinentes en fonction des questions de l'utilisateur.  
 
-## Fonctionnalités
+## 🌟 Fonctionnalités  
 
-- Génération d'embeddings à partir de texte avec OpenAI.
-- Stockage et recherche de similarités avec ChromaDB.
-- Chatbot capable de répondre à des questions liées aux lois et réglementations en assurance.
-- Maintien de l'historique des conversations pour fournir des réponses contextuelles.
-- Génération de réponses précises en se basant sur des articles législatifs et des références.
+- **Génération d'embeddings** : Utilise OpenAI pour convertir le texte en représentations vectorielles.  
+- **Recherche intelligente** : Stocke et interroge des sections législatives similaires avec ChromaDB.  
+- **Réponses contextualisées** : Maintient un historique des conversations pour fournir des réponses pertinentes.  
+- **Précision** : Génère des réponses basées sur des articles législatifs et des références fiables.  
+- **Support législatif spécialisé** : Répond aux questions relatives aux lois et réglementations en assurance.  
 
-## Prérequis
+---
 
-- Python 3.x
-- Clé API OpenAI
-- Variables d'environnement pour la configuration des clés et services
+## 🛠️ Prérequis  
 
-## Créer un environnement virtuel et activer
+- **Python 3.x**  
+- **Clé API OpenAI**  
+- **Variables d'environnement** : Nécessaires pour configurer les clés et services.  
 
--> python -m venv venv
--> source venv/bin/activate  # Sur Windows : venv\Scripts\activate
+---
 
-## Installer les dépendances
+## ⚙️ Installation  
 
--> pip install -r requirements.txt
+### 1. Créer et activer un environnement virtuel  
+Créez et activez un environnement virtuel avec la commande suivante :  
+```bash
+python -m venv venv  
+source venv/bin/activate  # Linux/Mac  
+venv\Scripts\activate     # Windows  
+```
 
-## Configurer les variables d'environnement
+### 2. Installer les dépendances  
+Installez les bibliothèques nécessaires avec :  
+```bash
+pip install -r requirements.txt
+```
 
-- OPENAI_API_KEY=your_openai_api_key (fichier Setting)
+### 3. Configurer les variables d'environnement
+Ajoutez votre clé API OpenAI dans un fichier de configuration :
+```bash
+OPENAI_API_KEY=your_openai_api_key
+```
 
-## Insertion des données 
+### 4. Insérer les données législatives
+Ajoutez les données dans la base ChromaDB en exécutant :
+```bash
+python manage.py insert_data
+```
+**Remarque** : Si nécessaire, modifiez le chemin vers output.json dans vectorDB.py
 
-- python manage.py insert_data (changer le chemin vers output.json dans vectorDB.py)
+### 5. Démarrer le serveur Django
+Lancez le serveur pour commencer à utiliser le chatbot :
+```bash
+python manage.py runserver
+```  
 
-## Démarrer le serveur Django
+---
 
-- python manage.py runserver
+## 🧰 Outils et Technologies  
+
+- **OpenAI** : Pour la génération d'embeddings et les réponses basées sur l'IA.  
+- **ChromaDB** : Pour le stockage et la recherche de similarités.  
+- **Django** : Framework backend pour gérer le serveur et les opérations de base.  
+
+---
+
+## 🎯 Objectif  
+
+Faciliter l'accès aux réglementations législatives dans le domaine de l'assurance en répondant rapidement et avec précision aux questions des utilisateurs.  
+
+---
+
+## 📚 Ressources utiles  
+
+- [Documentation OpenAI](https://platform.openai.com/docs/)  
+- [Documentation ChromaDB](https://www.trychroma.com/docs)  
+- [Documentation Django](https://docs.djangoproject.com/)  
+
+---
+
+## 💡 Contributions  
+
+Les contributions sont les bienvenues ! Si vous avez des suggestions ou souhaitez signaler un problème, ouvrez une **issue** ou soumettez une **pull request**.  
